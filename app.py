@@ -12,7 +12,7 @@ def render():
 
 @app.route("/1")
 def mongo():
-    return send_file(PDF_LINK)
+    return send_file(PDF_LINK_1)
 
 @app.route("/health")
 def health_check():
