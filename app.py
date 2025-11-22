@@ -1,27 +1,23 @@
-from flask import Flask, send_file
-
+from flask import Flask, send_file, jsonify , render_template
 
 app =  Flask(__name__)
 
-PDF_LINK = "PDFS/pypdf.pdf"
-PDF_LINK_1 = "PDFS/mongodb.pdf"
-PDF_LINK_2 = "PDFS/pdf2.pdf"
-
-@app.route("/")
-def render():
-    return send_file(PDF_LINK)
-
-@app.route("/1")
-def mongo():
-    return send_file(PDF_LINK_1)
-
-@app.route("/2")
-def getpdf():
-    return send_file(PDF_LINK_2)
 
 @app.route("/health")
 def health_check():
     return "OK", 200
+
+@app.route("/")
+def index():
+    return send_file("Asset/lab.pdf")
+
+@app.route("/r")
+def r():
+    return render_template("index.html")
+
+@app.route("/readme.md")
+def readme():
+    return send_file("Asset/readme.md")
 
 if __name__ == "__main__":
     app.run()
