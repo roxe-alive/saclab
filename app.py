@@ -1,4 +1,4 @@
-from flask import Flask, send_file, jsonify , render_template
+from flask import Flask, send_file, render_template
 
 app =  Flask(__name__)
 
@@ -8,11 +8,11 @@ def health_check():
     return "OK", 200
 
 @app.route("/")
-def index():
+def rpdf():
     return send_file("Asset/lab.pdf")
 
 @app.route("/r")
-def r():
+def index():
     return render_template("index.html")
 
 @app.route("/readme.md")
