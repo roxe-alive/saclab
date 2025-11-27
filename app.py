@@ -9,15 +9,7 @@ def health_check():
 
 @app.route("/")
 def rpdf():
-    return send_file("Asset/lab.pdf")
-
-@app.route("/r")
-def index():
-    return render_template("index.html")
-
-@app.route("/readme.md")
-def readme():
-    return send_file("Asset/readme.md")
+    return "etha Mone , Fear ayo :/" , 403
 
 if __name__ == "__main__":
     app.run()
